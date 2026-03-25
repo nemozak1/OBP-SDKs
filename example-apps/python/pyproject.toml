@@ -1,0 +1,13 @@
+[project]
+name = "obp-python-sdk-example"
+version = "0.1.0"
+description = "An Example application for the python SDK"
+authors = [
+    {name = "TESOBE"}
+]
+license = {text = "AGPL v3.0"}
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "obp-python @ git+https://github.com/OpenBankProject/OBP-SDKs.git#subdirectory=sdks/python"
+]

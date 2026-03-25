@@ -7,4 +7,4 @@ additionalProperties:
   packageVersion: "1.0.0"
   packageUrl: https://github.com/OpenBankProject/OBP-SDKs
   developerOrganization: TESOBE GmbH
-  licenseInfo: Apache-2.0
+  licenseInfo: AGPL-3.0

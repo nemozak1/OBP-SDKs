@@ -21,30 +21,37 @@ Python 3.9+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install from [PyPI](https://pypi.org/project/obp-python/):
 
 ```sh
-pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
+pip install obp-python
 ```
-(you may need to run `pip` with root permission: `sudo pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git`)
 
 Then import the package:
 ```python
 import obp_python
 ```
 
-### Setuptools
-
-Install via [Setuptools](http://pypi.python.org/pypi/setuptools).
+### Install from GitHub
 
 ```sh
-python setup.py install --user
+pip install "obp-python @ git+https://github.com/OpenBankProject/OBP-SDKs.git#subdirectory=sdks/python"
 ```
-(or `sudo python setup.py install` to install the package for all users)
 
-Then import the package:
-```python
-import obp_python
+Or with Poetry:
+
+```sh
+poetry add "git+https://github.com/OpenBankProject/OBP-SDKs.git#subdirectory=sdks/python"
+```
+
+### Install from source
+
+If you want to install from source (e.g. for development):
+
+```sh
+git clone https://github.com/OpenBankProject/OBP-SDKs.git
+cd OBP-SDKs/sdks/python
+pip install .
 ```
 
 ### Tests
@@ -56,7 +63,7 @@ Execute `pytest` to run the tests.
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```python
-
+import os
 import obp_python
 from obp_python.rest import ApiException
 from pprint import pprint
@@ -72,19 +79,18 @@ configuration = obp_python.Configuration(
 # Examples for each auth method are provided below, use the example that
 # satisfies your auth use case.
 
-configuration.access_token = os.environ["ACCESS_TOKEN"]
+# --- Option 1: DirectLogin ---
+# The token should be obtained via the DirectLogin endpoint first.
+# Store it in an environment variable (e.g. OBP_DIRECT_LOGIN_TOKEN).
+configuration.api_key['DirectLogin'] = os.environ["OBP_DIRECT_LOGIN_TOKEN"]
+configuration.api_key_prefix['DirectLogin'] = 'DirectLogin token='
 
-# Configure API key authorization: GatewayLogin
-configuration.api_key['GatewayLogin'] = os.environ["API_KEY"]
+# --- Option 2: OAuth2 ---
+# configuration.access_token = os.environ["OBP_ACCESS_TOKEN"]
 
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['GatewayLogin'] = 'Bearer'
-
-# Configure API key authorization: DirectLogin
-configuration.api_key['DirectLogin'] = os.environ["API_KEY"]
-
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['DirectLogin'] = 'Bearer'
+# --- Option 3: GatewayLogin ---
+# configuration.api_key['GatewayLogin'] = os.environ["OBP_GATEWAY_LOGIN_TOKEN"]
+# configuration.api_key_prefix['GatewayLogin'] = 'GatewayLogin token='
 
 
 # Enter a context with an instance of the API client
