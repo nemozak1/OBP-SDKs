@@ -41,7 +41,7 @@ import com.openbankproject.ApiClient;
   GetUserInvitations200Response.JSON_PROPERTY_LAST_NAME,
   GetUserInvitations200Response.JSON_PROPERTY_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetUserInvitations200Response {
   public static final String JSON_PROPERTY_FIRST_NAME = "first_name";
   @javax.annotation.Nullable

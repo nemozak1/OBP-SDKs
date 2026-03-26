@@ -38,7 +38,7 @@ import com.openbankproject.ApiClient;
   CreateProductCollectionRequest.JSON_PROPERTY_PARENT_PRODUCT_CODE,
   CreateProductCollectionRequest.JSON_PROPERTY_CHILDREN_PRODUCT_CODES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CreateProductCollectionRequest {
   public static final String JSON_PROPERTY_PARENT_PRODUCT_CODE = "parent_product_code";
   @javax.annotation.Nullable

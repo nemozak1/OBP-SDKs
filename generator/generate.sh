@@ -34,11 +34,18 @@ generate() {
     return 1
   fi
 
+  local template_dir="${SCRIPT_DIR}/templates/${lang}"
+  local template_flag=()
+  if [ -d "${template_dir}" ]; then
+    template_flag=(-t "${template_dir}")
+  fi
+
   echo "=== Generating ${lang} SDK ==="
   openapi-generator-cli generate \
     -c "${config}" \
     -i "${SPEC_FILE}" \
-    -o "${ROOT_DIR}/sdks/${lang}"
+    -o "${ROOT_DIR}/sdks/${lang}" \
+    "${template_flag[@]}"
   echo "=== Done: ${lang} ==="
   echo
 }

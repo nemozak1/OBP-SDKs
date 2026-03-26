@@ -43,7 +43,7 @@ import com.openbankproject.ApiClient;
   GetOtherAccountMetadata200Response.JSON_PROPERTY_CORPORATE_LOCATION,
   GetOtherAccountMetadata200Response.JSON_PROPERTY_OPEN_CORPORATES_U_R_L
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetOtherAccountMetadata200Response {
   public static final String JSON_PROPERTY_PUBLIC_ALIAS = "public_alias";
   @javax.annotation.Nullable

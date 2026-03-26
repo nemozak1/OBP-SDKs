@@ -40,7 +40,7 @@ import com.openbankproject.ApiClient;
   GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner.JSON_PROPERTY_DATE_INSERTED,
   GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner.JSON_PROPERTY_USER_CUSTOMER_LINK_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetUserCustomerLinksByCustomerId200ResponseUserCustomerLinksInner {
   public static final String JSON_PROPERTY_IS_ACTIVE = "is_active";
   @javax.annotation.Nullable

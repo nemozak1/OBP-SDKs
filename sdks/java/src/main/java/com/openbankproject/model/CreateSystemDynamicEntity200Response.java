@@ -43,7 +43,7 @@ import com.openbankproject.ApiClient;
   CreateSystemDynamicEntity200Response.JSON_PROPERTY_HAS_COMMUNITY_ACCESS,
   CreateSystemDynamicEntity200Response.JSON_PROPERTY_HAS_PERSONAL_ENTITY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CreateSystemDynamicEntity200Response {
   public static final String JSON_PROPERTY_PERSONAL_REQUIRES_ROLE = "personal_requires_role";
   @javax.annotation.Nullable

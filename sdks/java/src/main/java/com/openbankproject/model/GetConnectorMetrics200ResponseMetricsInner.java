@@ -40,7 +40,7 @@ import com.openbankproject.ApiClient;
   GetConnectorMetrics200ResponseMetricsInner.JSON_PROPERTY_CORRELATION_ID,
   GetConnectorMetrics200ResponseMetricsInner.JSON_PROPERTY_DATE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetConnectorMetrics200ResponseMetricsInner {
   public static final String JSON_PROPERTY_CONNECTOR_NAME = "connector_name";
   @javax.annotation.Nullable

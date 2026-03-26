@@ -40,7 +40,7 @@ import com.openbankproject.ApiClient;
   CreateVRPConsentRequest200ResponsePayloadToAccountLimit.JSON_PROPERTY_MAX_NUMBER_OF_YEARLY_TRANSACTIONS,
   CreateVRPConsentRequest200ResponsePayloadToAccountLimit.JSON_PROPERTY_MAX_YEARLY_AMOUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CreateVRPConsentRequest200ResponsePayloadToAccountLimit {
   public static final String JSON_PROPERTY_MAX_MONTHLY_AMOUNT = "max_monthly_amount";
   @javax.annotation.Nullable

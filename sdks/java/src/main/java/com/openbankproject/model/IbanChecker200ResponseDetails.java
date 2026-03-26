@@ -47,7 +47,7 @@ import com.openbankproject.ApiClient;
   IbanChecker200ResponseDetails.JSON_PROPERTY_ADDRESS,
   IbanChecker200ResponseDetails.JSON_PROPERTY_PHONE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class IbanChecker200ResponseDetails {
   public static final String JSON_PROPERTY_BANK_ROUTINGS = "bank_routings";
   @javax.annotation.Nullable

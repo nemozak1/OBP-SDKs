@@ -36,7 +36,7 @@ import com.openbankproject.ApiClient;
   GetCacheConfig200ResponseInMemoryStatus.JSON_PROPERTY_AVAILABLE,
   GetCacheConfig200ResponseInMemoryStatus.JSON_PROPERTY_CURRENT_SIZE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetCacheConfig200ResponseInMemoryStatus {
   public static final String JSON_PROPERTY_AVAILABLE = "available";
   @javax.annotation.Nullable

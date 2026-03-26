@@ -40,7 +40,7 @@ import com.openbankproject.ApiClient;
   GetSignalStats200Response.JSON_PROPERTY_CHANNELS,
   GetSignalStats200Response.JSON_PROPERTY_TOTAL_MESSAGES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetSignalStats200Response {
   public static final String JSON_PROPERTY_TOTAL_CHANNELS = "total_channels";
   @javax.annotation.Nullable

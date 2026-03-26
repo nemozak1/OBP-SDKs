@@ -46,7 +46,7 @@ import com.openbankproject.ApiClient;
   CreateDirectDebit200Response.JSON_PROPERTY_DIRECT_DEBIT_ID,
   CreateDirectDebit200Response.JSON_PROPERTY_ACTIVE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CreateDirectDebit200Response {
   public static final String JSON_PROPERTY_DATE_STARTS = "date_starts";
   @javax.annotation.Nullable

@@ -35,7 +35,7 @@ import com.openbankproject.ApiClient;
 @JsonPropertyOrder({
   GetCurrenciesAtBank200ResponseCurrenciesInner.JSON_PROPERTY_ALPHANUMERIC_CODE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetCurrenciesAtBank200ResponseCurrenciesInner {
   public static final String JSON_PROPERTY_ALPHANUMERIC_CODE = "alphanumeric_code";
   @javax.annotation.Nullable

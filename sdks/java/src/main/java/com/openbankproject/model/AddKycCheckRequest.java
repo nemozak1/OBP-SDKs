@@ -42,7 +42,7 @@ import com.openbankproject.ApiClient;
   AddKycCheckRequest.JSON_PROPERTY_STAFF_NAME,
   AddKycCheckRequest.JSON_PROPERTY_COMMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class AddKycCheckRequest {
   public static final String JSON_PROPERTY_CUSTOMER_NUMBER = "customer_number";
   @javax.annotation.Nullable

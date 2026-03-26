@@ -39,7 +39,7 @@ import com.openbankproject.ApiClient;
   GetConsents200ResponseConsentsInnerJwtPayloadViewsInner.JSON_PROPERTY_VIEW_ID,
   GetConsents200ResponseConsentsInnerJwtPayloadViewsInner.JSON_PROPERTY_ACCOUNT_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetConsents200ResponseConsentsInnerJwtPayloadViewsInner {
   public static final String JSON_PROPERTY_HELPER_INFO = "helper_info";
   @javax.annotation.Nullable

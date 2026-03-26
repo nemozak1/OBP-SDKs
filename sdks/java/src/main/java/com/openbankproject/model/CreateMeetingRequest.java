@@ -44,7 +44,7 @@ import com.openbankproject.ApiClient;
   CreateMeetingRequest.JSON_PROPERTY_DATE,
   CreateMeetingRequest.JSON_PROPERTY_PURPOSE_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CreateMeetingRequest {
   public static final String JSON_PROPERTY_PROVIDER_ID = "provider_id";
   @javax.annotation.Nullable

@@ -42,7 +42,7 @@ import com.openbankproject.ApiClient;
   GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBody.JSON_PROPERTY_HOBBY,
   GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBody.JSON_PROPERTY_MY_USER_ID
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetBankLevelDynamicResourceDoc200ResponseSuccessResponseBody {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable

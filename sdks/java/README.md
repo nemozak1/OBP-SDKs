@@ -4,7 +4,7 @@ Open Bank Project API v6.0.0
 
 - API version: 6.0.0
 
-- Build date: 2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]
+- Build date: 2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]
 
 - Generator version: 7.20.0
 

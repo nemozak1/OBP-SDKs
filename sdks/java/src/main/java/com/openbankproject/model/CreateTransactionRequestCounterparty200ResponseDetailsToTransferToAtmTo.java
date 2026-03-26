@@ -39,7 +39,7 @@ import com.openbankproject.ApiClient;
   CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtmTo.JSON_PROPERTY_LEGAL_NAME,
   CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtmTo.JSON_PROPERTY_MOBILE_PHONE_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CreateTransactionRequestCounterparty200ResponseDetailsToTransferToAtmTo {
   public static final String JSON_PROPERTY_DATE_OF_BIRTH = "date_of_birth";
   @javax.annotation.Nullable

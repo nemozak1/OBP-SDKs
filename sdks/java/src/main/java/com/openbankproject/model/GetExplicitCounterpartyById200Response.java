@@ -57,7 +57,7 @@ import com.openbankproject.ApiClient;
   GetExplicitCounterpartyById200Response.JSON_PROPERTY_COUNTERPARTY_ID,
   GetExplicitCounterpartyById200Response.JSON_PROPERTY_OTHER_ACCOUNT_SECONDARY_ROUTING_SCHEME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetExplicitCounterpartyById200Response {
   public static final String JSON_PROPERTY_OTHER_ACCOUNT_ROUTING_ADDRESS = "other_account_routing_address";
   @javax.annotation.Nullable

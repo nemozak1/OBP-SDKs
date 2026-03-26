@@ -39,7 +39,7 @@ import com.openbankproject.ApiClient;
   CreateTransactionRequestCounterparty200ResponseChallengesInner.JSON_PROPERTY_LINK,
   CreateTransactionRequestCounterparty200ResponseChallengesInner.JSON_PROPERTY_CHALLENGE_TYPE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CreateTransactionRequestCounterparty200ResponseChallengesInner {
   public static final String JSON_PROPERTY_ALLOWED_ATTEMPTS = "allowed_attempts";
   @javax.annotation.Nullable

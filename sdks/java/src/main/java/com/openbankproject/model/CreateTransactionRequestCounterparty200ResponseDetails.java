@@ -55,7 +55,7 @@ import com.openbankproject.ApiClient;
   CreateTransactionRequestCounterparty200ResponseDetails.JSON_PROPERTY_VALUE,
   CreateTransactionRequestCounterparty200ResponseDetails.JSON_PROPERTY_TO_SANDBOX_TAN
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CreateTransactionRequestCounterparty200ResponseDetails {
   public static final String JSON_PROPERTY_TO_TRANSFER_TO_PHONE = "to_transfer_to_phone";
   @javax.annotation.Nullable

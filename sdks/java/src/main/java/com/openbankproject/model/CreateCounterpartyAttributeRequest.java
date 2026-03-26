@@ -38,7 +38,7 @@ import com.openbankproject.ApiClient;
   CreateCounterpartyAttributeRequest.JSON_PROPERTY_IS_ACTIVE,
   CreateCounterpartyAttributeRequest.JSON_PROPERTY_VALUE
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CreateCounterpartyAttributeRequest {
   public static final String JSON_PROPERTY_ATTRIBUTE_TYPE = "attribute_type";
   @javax.annotation.Nullable

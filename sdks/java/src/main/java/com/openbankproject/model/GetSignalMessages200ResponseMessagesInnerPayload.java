@@ -39,7 +39,7 @@ import com.openbankproject.ApiClient;
   GetSignalMessages200ResponseMessagesInnerPayload.JSON_PROPERTY_AGENT_NAME,
   GetSignalMessages200ResponseMessagesInnerPayload.JSON_PROPERTY_CAPABILITIES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetSignalMessages200ResponseMessagesInnerPayload {
   public static final String JSON_PROPERTY_AGENT_NAME = "agent_name";
   @javax.annotation.Nullable

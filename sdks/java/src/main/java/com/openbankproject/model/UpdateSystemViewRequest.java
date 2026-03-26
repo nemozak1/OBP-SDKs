@@ -45,7 +45,7 @@ import com.openbankproject.ApiClient;
   UpdateSystemViewRequest.JSON_PROPERTY_METADATA_VIEW,
   UpdateSystemViewRequest.JSON_PROPERTY_ALLOWED_ACTIONS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class UpdateSystemViewRequest {
   public static final String JSON_PROPERTY_CAN_GRANT_ACCESS_TO_VIEWS = "can_grant_access_to_views";
   @javax.annotation.Nullable

@@ -35,7 +35,7 @@ import com.openbankproject.ApiClient;
 @JsonPropertyOrder({
   GetOAuth2ServerJWKsURIs200ResponseJwksUrisInner.JSON_PROPERTY_JWKS_URI
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetOAuth2ServerJWKsURIs200ResponseJwksUrisInner {
   public static final String JSON_PROPERTY_JWKS_URI = "jwks_uri";
   @javax.annotation.Nullable

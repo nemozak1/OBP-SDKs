@@ -51,7 +51,7 @@ import com.openbankproject.ApiClient;
   GetUsersByEmail200ResponseUsersInner.JSON_PROPERTY_LAST_MARKETING_AGREEMENT_SIGNED_DATE,
   GetUsersByEmail200ResponseUsersInner.JSON_PROPERTY_AGREEMENTS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetUsersByEmail200ResponseUsersInner {
   public static final String JSON_PROPERTY_PROVIDER = "provider";
   @javax.annotation.Nullable

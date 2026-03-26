@@ -37,7 +37,7 @@ import com.openbankproject.ApiClient;
   PublishSignalMessageRequest.JSON_PROPERTY_MESSAGE_TYPE,
   PublishSignalMessageRequest.JSON_PROPERTY_PAYLOAD
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class PublishSignalMessageRequest {
   public static final String JSON_PROPERTY_MESSAGE_TYPE = "message_type";
   @javax.annotation.Nullable

@@ -39,7 +39,7 @@ import com.openbankproject.ApiClient;
   CleanupOrphanedDynamicEntityRecords200Response.JSON_PROPERTY_DELETED_ORPHANED_ENTITIES,
   CleanupOrphanedDynamicEntityRecords200Response.JSON_PROPERTY_TOTAL_RECORDS_DELETED
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CleanupOrphanedDynamicEntityRecords200Response {
   public static final String JSON_PROPERTY_DELETED_ORPHANED_ENTITIES = "deleted_orphaned_entities";
   @javax.annotation.Nullable

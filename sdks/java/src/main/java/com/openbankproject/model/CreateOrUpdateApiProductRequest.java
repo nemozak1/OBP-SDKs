@@ -49,7 +49,7 @@ import com.openbankproject.ApiClient;
   CreateOrUpdateApiProductRequest.JSON_PROPERTY_PER_MINUTE_CALL_LIMIT,
   CreateOrUpdateApiProductRequest.JSON_PROPERTY_PER_DAY_CALL_LIMIT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CreateOrUpdateApiProductRequest {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable

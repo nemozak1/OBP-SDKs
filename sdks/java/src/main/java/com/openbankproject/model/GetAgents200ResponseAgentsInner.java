@@ -37,7 +37,7 @@ import com.openbankproject.ApiClient;
   GetAgents200ResponseAgentsInner.JSON_PROPERTY_LEGAL_NAME,
   GetAgents200ResponseAgentsInner.JSON_PROPERTY_AGENT_NUMBER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetAgents200ResponseAgentsInner {
   public static final String JSON_PROPERTY_AGENT_ID = "agent_id";
   @javax.annotation.Nullable

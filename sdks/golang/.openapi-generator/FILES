@@ -1674,6 +1674,4 @@ model_verify_user_credentials_200_response.go
 model_verify_user_credentials_request.go
 model_waiting_for_godot_200_response.go
 response.go
-test/api_counterparty_attribute_test.go
-test/api_mandate_test.go
 utils.go

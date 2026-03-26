@@ -37,7 +37,7 @@ import com.openbankproject.ApiClient;
   GetScopes200ResponseListInner.JSON_PROPERTY_BANK_ID,
   GetScopes200ResponseListInner.JSON_PROPERTY_ROLE_NAME
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetScopes200ResponseListInner {
   public static final String JSON_PROPERTY_SCOPE_ID = "scope_id";
   @javax.annotation.Nullable

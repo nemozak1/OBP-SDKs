@@ -47,7 +47,7 @@ import com.openbankproject.ApiClient;
   GetProductTree200ResponseParentProduct.JSON_PROPERTY_CATEGORY,
   GetProductTree200ResponseParentProduct.JSON_PROPERTY_FAMILY
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetProductTree200ResponseParentProduct {
   public static final String JSON_PROPERTY_NAME = "name";
   @javax.annotation.Nullable

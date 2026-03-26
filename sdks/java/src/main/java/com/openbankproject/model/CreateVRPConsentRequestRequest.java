@@ -43,7 +43,7 @@ import com.openbankproject.ApiClient;
   CreateVRPConsentRequestRequest.JSON_PROPERTY_VALID_FROM,
   CreateVRPConsentRequestRequest.JSON_PROPERTY_TO_ACCOUNT
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CreateVRPConsentRequestRequest {
   public static final String JSON_PROPERTY_PHONE_NUMBER = "phone_number";
   @javax.annotation.Nullable

@@ -36,7 +36,7 @@ import com.openbankproject.ApiClient;
   CreateFeaturedApiCollectionRequest.JSON_PROPERTY_API_COLLECTION_ID,
   CreateFeaturedApiCollectionRequest.JSON_PROPERTY_SORT_ORDER
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class CreateFeaturedApiCollectionRequest {
   public static final String JSON_PROPERTY_API_COLLECTION_ID = "api_collection_id";
   @javax.annotation.Nullable

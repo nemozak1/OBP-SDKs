@@ -38,7 +38,7 @@ import com.openbankproject.ApiClient;
   UpdateAtmLocationCategories200Response.JSON_PROPERTY_ATM_ID,
   UpdateAtmLocationCategories200Response.JSON_PROPERTY_LOCATION_CATEGORIES
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class UpdateAtmLocationCategories200Response {
   public static final String JSON_PROPERTY_ATM_ID = "atm_id";
   @javax.annotation.Nullable

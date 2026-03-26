@@ -2,6 +2,7 @@
 .gitignore
 .gitlab-ci.yml
 .travis.yml
+README.md
 docs/ABACApi.md
 docs/AIAgentApi.md
 docs/APIApi.md

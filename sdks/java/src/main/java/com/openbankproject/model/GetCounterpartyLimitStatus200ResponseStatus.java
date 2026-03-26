@@ -41,7 +41,7 @@ import com.openbankproject.ApiClient;
   GetCounterpartyLimitStatus200ResponseStatus.JSON_PROPERTY_MAX_NUMBER_OF_TRANSACTIONS_STATUS,
   GetCounterpartyLimitStatus200ResponseStatus.JSON_PROPERTY_MAX_NUMBER_OF_YEARLY_TRANSACTIONS_STATUS
 })
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T21:47:30.402330+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-03-26T22:05:21.988755+07:00[Asia/Bangkok]", comments = "Generator version: 7.20.0")
 public class GetCounterpartyLimitStatus200ResponseStatus {
   public static final String JSON_PROPERTY_MAX_TOTAL_AMOUNT_STATUS = "max_total_amount_status";
   @javax.annotation.Nullable
