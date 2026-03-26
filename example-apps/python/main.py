@@ -57,18 +57,9 @@ def main():
     else:
         print("No credentials set — using public endpoints only.\n")
 
-    with obp_python.ApiClient(configuration) as api_client:
-        # List banks (public endpoint, no auth required)
-        bank_api = BankApi(api_client)
-        try:
-            response = bank_api.get_banks()
-            print("Available banks:")
-            for bank in response.banks or []:
-                print(f"  - {bank.full_name} (id: {bank.bank_id})")
-        except ApiException as e:
-            print(f"API error ({e.status}): {e.reason}", file=sys.stderr)
-            sys.exit(1)
+    
 
+    with obp_python.ApiClient(configuration) as api_client:
         # If authenticated, get current user info
         if "DirectLogin" in configuration.api_key:
             user_api = UserApi(api_client)
@@ -81,6 +72,17 @@ def main():
                 print(f"  Provider:  {user.provider}")
             except ApiException as e:
                 print(f"\nFailed to get current user ({e.status}): {e.body}", file=sys.stderr)
+        
+        # List banks (public endpoint, no auth required)
+        bank_api = BankApi(api_client)
+        try:
+            response = bank_api.get_banks()
+            print("Available banks:")
+            for bank in response.banks or []:
+                print(f"  - {bank.full_name} (id: {bank.bank_id})")
+        except ApiException as e:
+            print(f"API error ({e.status}): {e.reason}", file=sys.stderr)
+            sys.exit(1)
 
 
 if __name__ == "__main__":
